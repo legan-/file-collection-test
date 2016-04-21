@@ -14,12 +14,13 @@ myFiles = new FileCollection('myFiles',
   }
 );
 
-myFiles.allow({
-  insert() { return true; },
-  write() { return true; },
-  remove() { return true; },
-  read() { return true; }
-});
+// Insecure definition of allow rules
+// myFiles.allow({
+//   insert() { return true; },
+//   write() { return true; },
+//   remove() { return true; },
+//   read() { return true; }
+// });
 
 Meteor.methods({
   'fileInsert'(uniqueIdentifier, fileName, fileType){
